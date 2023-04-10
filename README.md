@@ -11,25 +11,115 @@ Multithreaded implementation in C Programming language
 
 
 Sample Input
-Number of processes? 5 Number of resources? 3
 
-Currently Available resources (R1 R2 ...)? 3 3 2
+Number of processes? 6
 
-Resource allocated to process 1 (R1 R2 ...)? 0 1 0 Resource allocated to process 2 (R1 R2 ...)? 2 0 0 Resource allocated to process 3 (R1 R2 ...)? 3 0 2 Resource allocated to process 4 (R1 R2 ...)? 2 1 1 Resource allocated to process 5 (R1 R2 ...)? 0 0 2
+Number of resources? 3
 
-Maximum resource required by process 1 (R1 R2 ...)? 7 5 3 Maximum resource required by process 2 (R1 R2 ...)? 3 2 2 Maximum resource required by process 3 (R1 R2 ...)? 9 0 2 Maximum resource required by process 4 (R1 R2 ...)? 2 2 2 Maximum resource required by process 5 (R1 R2 ...)? 4 3 3
+Currently Available resources (R1 R2 ...)? 4 5 2
 
-Sample Output
-Safe Sequence Found : 2 4 5 1 3 Executing Processes...
 
---> Process 2 Allocated : 2 0 0 Needed : 1 2 2 Available : 3 3 2 Resource Allocated! Process Code Running... Process Code Completed... Process Releasing Resource... Resource Released! Now Available : 5 3 2
+Resource allocated to process 1 (R1 R2 ...)? 0 2 1
 
---> Process 4 Allocated : 2 1 1 Needed : 0 1 1 Available : 5 3 2 Resource Allocated! Process Code Running... Process Code Completed... Process Releasing Resource... Resource Released! Now Available : 7 4 3
+Resource allocated to process 2 (R1 R2 ...)? 1 2 3
 
---> Process 5 Allocated : 0 0 2 Needed : 4 3 1 Available : 7 4 3 Resource Allocated! Process Code Running... Process Code Completed... Process Releasing Resource... Resource Released! Now Available : 7 4 5
+Resource allocated to process 3 (R1 R2 ...)? 2 4 3
 
---> Process 1 Allocated : 0 1 0 Needed : 7 4 3 Available : 7 4 5 Resource Allocated! Process Code Running... Process Code Completed... Process Releasing Resource... Resource Released! Now Available : 7 5 5
+Resource allocated to process 4 (R1 R2 ...)? 0 1 0
 
---> Process 3 Allocated : 3 0 2 Needed : 6 0 0 Available : 7 5 5 Resource Allocated! Process Code Running... Process Code Completed... Process Releasing Resource... Resource Released! Now Available : 10 5 7
+Resource allocated to process 5 (R1 R2 ...)? 2 4 0
+
+Resource allocated to process 6 (R1 R2 ...)? 0 3 1
+
+
+Maximum resource required by process 1 (R1 R2 ...)? 7 5 4
+
+Maximum resource required by process 2 (R1 R2 ...)? 5 3 2
+
+Maximum resource required by process 3 (R1 R2 ...)? 2 4 5
+
+Maximum resource required by process 4 (R1 R2 ...)? 6 7 2
+
+Maximum resource required by process 5 (R1 R2 ...)? 1 3 5
+
+Maximum resource required by process 6 (R1 R2 ...)? 5 6 1
+
+
+
+Safe Sequence Found : 2  3  4  5  6  1
+Executing Processes...
+
+
+--> Process 2
+        Allocated :   1  2  3
+        Needed    :   4  1 -1
+        Available :   4  5  2
+        Resource Allocated!
+        Process Code Running...
+        Process Code Completed...
+        Process Releasing Resource...
+        Resource Released!
+        Now Available :   5  7  5
+
+
+--> Process 3
+        Allocated :   2  4  3
+        Needed    :   0  0  2
+        Available :   5  7  5
+        Resource Allocated!
+        Process Code Running...
+        Process Code Completed...
+        Process Releasing Resource...
+        Resource Released!
+        Now Available :   7 11  8
+
+
+--> Process 4
+        Allocated :   0  1  0
+        Needed    :   6  6  2
+        Available :   7 11  8
+        Resource Allocated!
+        Process Code Running...
+        Process Code Completed...
+        Process Releasing Resource...
+        Resource Released!
+        Now Available :   7 12  8
+
+
+--> Process 5
+        Allocated :   2  4  0
+        Needed    :  -1 -1  5
+        Available :   7 12  8
+        Resource Allocated!
+        Process Code Running...
+        Process Code Completed...
+        Process Releasing Resource...
+        Resource Released!
+        Now Available :   9 16  8
+
+
+--> Process 6
+        Allocated :   0  3  1
+        Needed    :   5  3  0
+        Available :   9 16  8
+        Resource Allocated!
+        Process Code Running...
+        Process Code Completed...
+        Process Releasing Resource...
+        Resource Released!
+        Now Available :   9 19  9
+
+
+--> Process 1
+        Allocated :   0  2  1
+        Needed    :   7  3  3
+        Available :   9 19  9
+        Resource Allocated!
+        Process Code Running...
+        Process Code Completed...
+        Process Releasing Resource...
+        Resource Released!
+        Now Available :   9 21 10
+
 
 All Processes Finished
