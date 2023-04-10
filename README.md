@@ -1,15 +1,14 @@
 CSE-316-Project
 Question Assigned
+
 Write a multithreaded program that implements the banker's algorithm. Create n threads that request and release resources from the bank. The banker will grant the request only if it leaves the system in a safe state. It is important that shared data be safe from concurrent access. To ensure safe access to shared data, you can use mutex locks.
 
 Solution Format
 Multithreaded implementation in C Programming language
 
-Compilation
-For compiling->gcc -o bankers_algorithm bankers_algorithm.c -pthread
 
-Execution
-For executing->./bankers_algorithm
+
+
 
 Sample Input
 Number of processes? 5 Number of resources? 3
